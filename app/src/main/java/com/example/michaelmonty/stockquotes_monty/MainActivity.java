@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Stock input_stock;
     private View mainView;
+    //with screenshots
+    
 
 
     @Override
