@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">StockQuotes-Monty</string>
+    <string name="enter_stock_symbol_text">Enter Stock Symbol: </string>
+    <string name="symbol_text">Symbol Name: </string>
+    <string name="name_text">Name: </string>
+    <string name="last_price_text">Last Trade Price: </string>
+    <string name="last_time_text">Last Trade Time: </string>
+    <string name="change_text">Change: </string>
+    <string name="week_text">52 Week Range: </string>
+    <string name="not_aplicable">N/A</string>
 </resources>
