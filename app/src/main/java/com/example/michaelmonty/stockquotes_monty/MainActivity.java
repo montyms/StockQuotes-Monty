@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import java.util.Date;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button cal_button;
@@ -32,12 +34,15 @@ public class MainActivity extends AppCompatActivity {
     private String week_answer;
 
     private Stock input_stock;
+    private View mainView;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mainView = findViewById(R.id.activity_main);
 
         cal_button = (Button)findViewById(R.id.cal_button);
         symbol_input = (EditText)findViewById(R.id.Symbol_Value);
@@ -70,6 +75,17 @@ public class MainActivity extends AppCompatActivity {
                             time_answer = input_stock.getLastTradeTime();
                             change_answer = input_stock.getChange();
                             week_answer = input_stock.getRange();
+
+                            mainView.post(new Runnable(){
+                                public void run(){
+                                    symbol.setText(symbol_answer);
+                                    name.setText(name_answer);
+                                    last_trade_price.setText(price_answer);
+                                    last_trade_time.setText(time_answer);
+                                    change.setText(change_answer);
+                                    week_range.setText(week_answer);
+                                }
+                            });
                             if(input_string.length() == 0 || input_stock.getName().contains("/")){
                                 symbol_answer = "Symbol Not Found";
                                 name_answer = "N/A";
